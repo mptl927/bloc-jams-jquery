@@ -5,11 +5,7 @@ class Player {
     this.playState = 'stopped';
     this.volume = 80;
     this.soundObject = new buzz.sound(this.currentlyPlaying.soundFileUrl);
-    this.test = "Value1";
   }
-
-// var p = new Player();
-
 
   getDuration() {
     return this.soundObject.getDuration();
@@ -54,18 +50,4 @@ class Player {
   }
 }
 
-/*
-constructor () {
-  this.currentlyPlaying = album.songs[0];
-  this.playState = 'stopped';
-  this.volume = 80;
-  this.soundObject = new buzz.sound(this.currentlyPlaying.soundFileUrl);
-}
-*/
-
 const player = new Player();
-
-
-console.log(player.test);
-player.test = "value2";
-console.log(player.test);
