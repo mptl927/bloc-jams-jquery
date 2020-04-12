@@ -16,6 +16,7 @@ class Player {
   }
 
   playPause (song = this.currentlyPlaying) {
+    console.log("Inside play pause");
     if (this.currentlyPlaying !== song) {
       // Stop the currently playing sound file (even if nothing is playing)
       this.soundObject.stop();
@@ -47,6 +48,18 @@ class Player {
   setVolume (percent) {
     this.volume = percent;
     this.soundObject.setVolume(percent);
+  }
+
+  prettyTime (timeInSeconds) {
+    var timeInSecondsFloor = Math.floor(timeInSeconds);
+    var min = Math.floor((timeInSecondsFloor / 60))
+    var sec = timeInSecondsFloor - (60 * min)
+    if (sec < 10) {
+      return min + ":0" + sec;
+    }
+    else {
+      return min + ":" + sec;
+    }
   }
 }
 
